@@ -31,7 +31,7 @@ app.post("/webhook", function (req, res) {
       messages: [
         {
           type: "text",
-          text: "Hello, user",
+          text: "Hello, user(" + req.body.events[0].message.text + ")",
         },
         {
           type: "text",
