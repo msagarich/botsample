@@ -1,9 +1,16 @@
-
+require('dotenv').config();
 const https = require("https");
 const express = require("express");
+const line = require('@line/bot-sdk');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const TOKEN = process.env.LINE_ACCESS_TOKEN;
+const SECRET = process.env.SECRET;
+
+const config = {
+  channelSecret: SECRET,
+  channelAccessToken: TOKEN,
+};
 
 app.use(express.json());
 app.use(
